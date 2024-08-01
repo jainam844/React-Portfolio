@@ -23,6 +23,7 @@ const socialLinks = {
 
 const pages = [
   { name: 'Projects', id: 'projects' },
+  { name: 'About Me', id: 'about' },
   { name: 'Experience', id: 'experience' },
   { name: 'Skills', id: 'skill' },
   { name: 'Contact', id: 'contact' },
@@ -30,6 +31,7 @@ const pages = [
 
 function ResponsiveAppBar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState<string>('');
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -39,15 +41,78 @@ function ResponsiveAppBar() {
     setDrawerOpen(false);
   };
 
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
+  React.useEffect(() => {
+    const sections = pages.map(page => document.getElementById(page.id));
+    const bannerElement = document.getElementById('banner');
+    const educationElement = document.getElementById('education'); // Add the education section
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let isBannerVisible = false;
+        let isEducationVisible = false;
+  
+        entries.forEach(entry => {
+          if (entry.target.id === 'banner') {
+            isBannerVisible = entry.isIntersecting;
+          } else if (entry.target.id === 'education') {
+            isEducationVisible = entry.isIntersecting;
+          } else if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+  
+        if (isBannerVisible || isEducationVisible) {
+          setActiveSection(''); // Clear active section if banner or education section is visible
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is in view
+    );
+  
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+  
+    if (bannerElement) {
+      observer.observe(bannerElement);
+    }
+  
+    if (educationElement) {
+      observer.observe(educationElement);
+    }
+  
+    return () => {
+      sections.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+      if (bannerElement) {
+        observer.unobserve(bannerElement);
+      }
+      if (educationElement) {
+        observer.unobserve(educationElement);
+      }
+    };
+  }, []);
+  
+
   return (
-    <Box>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: 'white',
+        boxShadow: 'none',
+        borderBottom: '1px solid #ddd',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#"
+            component="div"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -56,7 +121,9 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: 'black',
               textDecoration: 'none',
+              cursor: 'pointer',
             }}
+            onClick={handleLogoClick}
           >
             <Avatar src={Js} />
           </Typography>
@@ -75,7 +142,7 @@ function ResponsiveAppBar() {
             </IconButton>
 
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-              <Avatar src={Js} sx={{ mt: 1 }} />
+              <Avatar src={Js} sx={{ mt: 1, cursor: 'pointer' }} onClick={handleLogoClick} />
             </Box>
 
             <SwipeableDrawer
@@ -94,9 +161,7 @@ function ResponsiveAppBar() {
                   <Avatar src={Js} />
                   <IconButton
                     onClick={handleCloseDrawer}
-                    sx={{
-                      color: 'black',
-                    }}
+                    sx={{ color: 'black' }}
                   >
                     <CloseIcon />
                   </IconButton>
@@ -108,7 +173,19 @@ function ResponsiveAppBar() {
                       handleCloseDrawer();
                       smoothScroll(page.id);
                     }}
-                    sx={{ my: 2, color: '#000000', display: 'block', width: '100%' }}
+                    sx={{
+                      my: 2,
+                      color: '#000000',
+                      display: 'block',
+                      width: '100%',
+                      fontFamily: 'system-ui',
+                      fontWeight: '700',
+                      // Remove borderBottom for drawer items
+                      borderBottom: 'none',
+                      '&:hover': {
+                        color: '#1a73e8',
+                      }
+                    }}
                   >
                     {page.name}
                   </Button>
@@ -135,7 +212,17 @@ function ResponsiveAppBar() {
               <Button
                 key={page.id}
                 onClick={() => smoothScroll(page.id)}
-                sx={{ my: 2, color: '#000000', display: 'block', fontFamily: 'system-ui', fontWeight: '750' }}
+                sx={{
+                  my: 2,
+                  color: activeSection === page.id ? '#1a73e8' : '#000000',
+                  display: 'block',
+                  fontFamily: 'system-ui',
+                  fontWeight: '700',
+                  borderBottom: activeSection === page.id ? '2px solid #1a73e8' : 'none', // Horizontal line at bottom
+                  '&:hover': {
+                    color: '#1a73e8',
+                  }
+                }}
               >
                 {page.name}
               </Button>
@@ -143,7 +230,7 @@ function ResponsiveAppBar() {
           </Box>
         </Toolbar>
       </Container>
-    </Box>
+    </AppBar>
   );
 }
 

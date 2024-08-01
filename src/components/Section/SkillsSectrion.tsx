@@ -30,12 +30,10 @@ const skills: Skill[] = [
     { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/aEN5B72kMHDhDSRcCRSS.png', altText: 'Git', skillName: 'Git' },
 ];
 
-
 const SkillsSection: React.FC<SkillProps> = ({ id }) => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
-
 
     return (
         <Box
@@ -46,16 +44,16 @@ const SkillsSection: React.FC<SkillProps> = ({ id }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: 5,
-                mb: 0
+                mb: 0,
+                paddingTop: '80px', // Adjust based on your navbar height
             }}
-
         >
             <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 2,  // Adjusts the gap between the icon and the text
+                    gap: 2,
                 }}
             >
                 <Box
@@ -73,7 +71,7 @@ const SkillsSection: React.FC<SkillProps> = ({ id }) => {
                 >
                     <EngineeringIcon style={{ fontSize: '32px', color: '#1976d2' }} />
                 </Box>
-                <Typography variant="h4" component="h1"  gutterBottom marginBottom={-1} color={"#1976d2"} fontWeight={600}>
+                <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
                     Skills
                 </Typography>
             </Box>
@@ -83,7 +81,6 @@ const SkillsSection: React.FC<SkillProps> = ({ id }) => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
-                    mt: -1
                 }}
             >
                 {skills.map((skill, index) => (

@@ -4,8 +4,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import time1 from '../../assets/time-unscreen.gif';
 
-function Index() {
+interface IndexProps {
+    id?: string;
+}
 
+const Index: React.FC<IndexProps> = ({ id }) => {
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -20,8 +23,9 @@ function Index() {
                 my: 5, // Margin top and bottom
                 px: { xs: 2, sm: 4 }, // Padding x
                 overflow: 'hidden',
-                marginTop: 13// Prevent horizontal scroll bar
+                paddingTop: '80px', // Adjust this value based on the height of your sticky navbar
             }}
+            id={id}
         >
             {/* Section with heading and description */}
             <Box
@@ -83,12 +87,13 @@ function Index() {
                     <Typography variant="h4" component="h1" sx={{ mb: 2 }} color={"#1976d2"} fontWeight={600}>
                         ⚡ Full Stack <span style={{ color: 'black' }}>Web Developer!</span>
                     </Typography>
-                    <Typography  component="p" sx={{ mb: 2 ,fontWeight:500}}>
-                        Welcome to my portfolio! I'm a passionate and dedicated Full Stack Web Developer based in India, currently pursuing my Bachelor of Engineering degree in Computer Engineering. With a strong foundation in React, Node.js, Express.js, MongoDB, HTML, CSS, Git, and GitHub, I thrive on building robust and user-friendly web applications.
+                    <Typography component="p" sx={{ mb: 2, fontWeight: 500 }}>
+                        Welcome to my portfolio! I'm a passionate Full Stack Web Developer from India, currently pursuing a Bachelor of Engineering in Computer Engineering. With expertise in React, Node.js, Express.js, MongoDB, HTML, CSS, Git, and GitHub, I specialize in creating dynamic, user-friendly web applications.
                     </Typography>
-                    <Typography variant="body1" component="p" sx={{ mb: 2 ,fontWeight:500}}>
-                        Technology has always fascinated me, and I constantly strive to stay up-to-date with the latest trends and advancements in the field. From designing intuitive user interfaces to implementing efficient backend systems, I enjoy every aspect of the development process.
+                    <Typography variant="body1" component="p" sx={{ mb: 2, fontWeight: 500 }}>
+                        My journey in technology has been fueled by an insatiable curiosity and a commitment to continuous learning. Whether it's designing sleek user interfaces or developing efficient backend systems, I am dedicated to delivering high-quality, innovative solutions. Stay tuned as I share my latest projects and insights in the world of web development.
                     </Typography>
+
                 </Box>
             </Box>
         </Box>

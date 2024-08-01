@@ -23,7 +23,7 @@ function App() {
 
       <DrawerAppBar />
       <Banner />
-      <Index />
+      <Index id="about"/>
       <EducationTimeline />
       <WorkExperienceTimeline id="experience" />
       <SkillsSection id="skill" />

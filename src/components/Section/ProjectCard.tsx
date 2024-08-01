@@ -41,11 +41,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, li
             objectFit: 'cover', // Ensures the image covers the area without distortion
           }}
         />
-        <CardContent>
+        <CardContent sx={{ height: 150, overflow: 'hidden' }}>
           <Typography gutterBottom variant="h6" component="div" sx={{ fontWeight: 600 }}>
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography 
+            variant="body2" 
+            color="text.secondary" 
+            sx={{
+              display: '-webkit-box',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 4, // Limits to 4 lines
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          >
             {description}
           </Typography>
         </CardContent>

@@ -9,43 +9,46 @@ interface ProjectsProps {
 const projects = [
     {
         image: 'https://plus.unsplash.com/premium_photo-1663100722417-6e36673fe0ed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Lizard',
-        description: 'Lizards are a widespread group of squamate reptiles...',
-        link: 'https://example.com',
+        title: 'FaceBookClone',
+        description: `
+        Explore a sleek and efficient Facebook Clone designed with TypeScript and React, utilizing ViteJS for ultra-fast builds. This project demonstrates a highly responsive and user-friendly social media platform – it's a game-changer! ⚡
+      `,
+        link: 'https://github.com/jainam844/FaceBookClone',
     },
     {
         image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Lizard',
-        description: 'Lizards are a widespread group of squamate reptiles...',
-        link: 'https://example.com',
+        title: 'NetFlixClone',
+        description: 'This is a Netflix clone built using React.js for the front-end and Node.js with MongoDB for the back-end. Although it is not a complete replica of Netflix and does not include all its features, it provides a similar experience with a unique design touch. The app highlights my React.js skills with features such as a home page, sign-in page, sign-up page, browse page, and movie player. This project demonstrates my capability to build complex applications like Netflix.',
+        link: 'https://github.com/jainam844/Netflix-Clone-React-Node',
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'CI PLATFORM',
+        description: 'Introducing CI Platform, a comprehensive solution for Community Investment, Corporate Social Investment, and Community Social Investment. Built with ASP.NET MVC, Bootstrap, and jQuery, this platform offers a robust and user-friendly interface for managing and tracking investment initiatives. Empower your organization to make a meaningful impact with efficient project management, detailed reporting, and seamless community engagement.',
+        link: 'https://github.com/jainam844/CIPLATFORM',
     },
     {
         image: 'https://plus.unsplash.com/premium_photo-1663100722417-6e36673fe0ed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Lizard',
-        description: 'Lizards are a widespread group of squamate reptiles...',
-        link: 'https://example.com',
+        title: 'News App',
+        description: 'Stay up-to-date with the latest global news using our dynamic News App. The app features a user-friendly interface that organizes news articles by categories, making it easy to browse and read the latest updates on topics of interest. With a focus on delivering a seamless and engaging browsing experience, you can explore breaking news, trends, and stories from around the world, all in one convenient platform.',
+        link: 'https://github.com/jainam844/News-Web-App2',
     },
-    {
-        image: 'https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Lizard',
-        description: 'Lizards are a widespread group of squamate reptiles...',
-        link: 'https://example.com',
-    },
-    // Add more projects as needed
+
 ];
 
 const Projects: React.FC<ProjectsProps> = ({ id }) => {
     return (
-        <Box 
-        id={id}
-        sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            mt: 3
-        }}>
-      <Box
+        <Box
+            id={id}
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                mt: 3,
+                paddingTop: '80px',
+            }}>
+            <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -64,15 +67,16 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
                         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                         borderRadius: '50%',
                         color: 'info.main',
+
                     }}
                 >
                     <ComputerSharpIcon style={{ fontSize: '32px', color: '#1976d2' }} />
                 </Box>
-                <Typography variant="h4" component="h1" marginBottom={-1} color={"#1976d2"} fontWeight={600}>
-                Projects
-            </Typography>
+                <Typography variant="h4" component="h1" marginBottom={0} color={"#1976d2"} fontWeight={600}>
+                    Projects
+                </Typography>
             </Box>
-  
+
             <Box sx={{ padding: 4 }}>
                 <Grid container spacing={4} justifyContent="center">
                     {projects.map((project, index) => (

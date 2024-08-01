@@ -13,6 +13,7 @@ const AppBanner = () => {
 
   return (
     <Box
+        id="banner"
       sx={{
         position: 'relative',
         overflow: 'hidden',
@@ -20,9 +21,9 @@ const AppBanner = () => {
         flexDirection: { xs: 'column', sm: 'row' },
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '80vh', // Increased height
+        minHeight: '88vh', // Increased height
         textAlign: 'center',
-        mt: { xs: 1, md: 1 },
+        mt: { xs: 0, md: 0 },
         px: { xs: 2, sm: 4 },
         '&::before': {
           content: '""',
@@ -33,7 +34,8 @@ const AppBanner = () => {
           height: '100%',
           background: 'linear-gradient(35deg,  #0e76a8, #1171ef)',
           zIndex: -1,
-        }
+        },
+     
       }}
     >
       <Box
@@ -128,7 +130,7 @@ const AppBanner = () => {
           }}
         >
           <Button
-            href="mailto:your-email@example.com"
+            href="mailto:shahjainam491@gmail.com"
             target="_blank"
             rel="noopener"
             sx={{
@@ -148,7 +150,7 @@ const AppBanner = () => {
             <EmailIcon />
           </Button>
           <Button
-            href="https://www.linkedin.com/in/1hanzla100/"
+            href="https://www.linkedin.com/in/jainam-shah-a0b53b194"
             target="_blank"
             rel="noopener"
             sx={{
@@ -167,7 +169,7 @@ const AppBanner = () => {
             <LinkedInIcon />
           </Button>
           <Button
-            href="https://github.com/1hanzla100"
+            href="https://github.com/jainam844"
             target="_blank"
             rel="noopener"
             sx={{
@@ -187,7 +189,7 @@ const AppBanner = () => {
             <GitHubIcon />
           </Button>
           <Button
-            href="https://www.instagram.com/__hanzla100"
+            href="https://www.instagram.com/jainam_shah"
             target="_blank"
             rel="noopener"
             sx={{

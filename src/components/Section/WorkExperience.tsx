@@ -7,14 +7,16 @@ import {
     TimelineConnector,
     TimelineContent,
     TimelineDot,
+
     TimelineOppositeContent
 } from '@mui/lab';
-import { Typography, Box, Card, CardContent, Avatar } from '@mui/material';
+import { Typography, Box, Card, CardContent, Avatar, Chip } from '@mui/material';
 import { Star as StarIcon, Computer as ComputerIcon } from '@mui/icons-material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import tatvasoft from '../../assets/tatvasoft.png';
 import WorkOutlinedIcon from '@mui/icons-material/WorkOutlined';
+
 interface WorkExperienceProps {
     id?: string;
 }
@@ -28,15 +30,34 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
             once: false,
         });
     }, []);
-
+    const skills = [
+        'REST API',
+        'RxJS',
+        'JavaScript',
+        'Bootstrap',
+        'MDBootstrap',
+        'EF Core',
+        '.NET Core',
+        'SignalR',
+        'Angular Material',
+    ];
     return (
-        <Box sx={{ my: 5, px: { xs: 2, sm: 4 }, textAlign: 'center', overflow: 'hidden' }} id={id}>
+        <Box
+            sx={{
+                my: 5,
+                px: { xs: 2, sm: 4 },
+                textAlign: 'center',
+                overflow: 'hidden',
+                paddingTop: '80px', // Ensure visibility if behind a fixed navbar
+            }}
+            id={id}
+        >
             <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 2,  // Adjusts the gap between the icon and the text
+                    gap: 2,
                 }}
             >
                 <Box
@@ -54,100 +75,146 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                 >
                     <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
                 </Box>
-                <Typography variant="h4" component="h1" gutterBottom marginBottom={-1} color={"#1976d2"} fontWeight={600}>
+                <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
                     Work Experience
                 </Typography>
             </Box>
             <Timeline position={isXs ? "right" : "alternate"}>
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
-                        <TimelineOppositeContent>
-                            <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                                Jan - June 2024
+                        <TimelineOppositeContent marginTop={2}>
+                            <Typography variant="body1" color="text.primary" fontWeight={700}>
+                                July 2023 - Present
                             </Typography>
                         </TimelineOppositeContent>
                     )}
                     <TimelineSeparator>
-                        <TimelineDot sx={{
-                            bgcolor: '#4caf50',
-                            width: 30,
-                            height: 30,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)'
-                        }}>
+                        <TimelineDot
+                            sx={{
+                                bgcolor: '#3f51b5',
+                                width: 30,
+                                height: 30,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+                            }}
+                        >
                             <ComputerIcon sx={{ color: '#ffffff' }} />
                         </TimelineDot>
-                        <TimelineConnector sx={{
-                            bgcolor: '#4caf50',
-                            width: 4
-                        }} />
+                        <TimelineConnector sx={{ bgcolor: '#3f51b5', width: 4 }} />
                     </TimelineSeparator>
-                    <TimelineContent data-aos="flip-left"
+                    <TimelineContent
+                        data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
                     >
-                        <Card sx={{
-                            width: {
-                                xs: 300,
-                                sm: 300,
-                                md: 400,
-                                lg: 500,
-                                xl: 600
-                            },
-                            mt: { xs: 2, sm: 2 },
-                            border: '2px solid #D3D3D3',
-                            borderRadius: '8px',
-                            marginTop: -2
-                        }}
+                        <Card
+                            sx={{
+                                width: {
+                                    xs: 300,
+                                    sm: 300,
+                                    md: 400,
+                                    lg: 500,
+                                    xl: 600
+                                },
+                                mt: 2,
+                                border: '2px solid #D3D3D3',
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}
                         >
-                            <CardContent>
-                                <Typography variant="h6" component="div">
+                            <CardContent
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 2,
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    component="div"
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        mb: 1, // Margin bottom to add space below the title
+                                    }}
+                                    fontWeight={"bolder"}
+                                >
                                     Tatvasoft
+                                    <Avatar
+                                        src={tatvasoft}
+                                        sx={{
+                                            width: 30,
+                                            height: 30,
+                                            ml: 1, // Adds left margin to the icon for more spacing
+                                        }}
+                                    />
                                 </Typography>
-                                <Typography variant="subtitle1">
-                                    .NET Intern
+                                <Typography variant="subtitle1" fontWeight={"bold"}>
+                                    Full Stack Developer
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary">
+                                <Typography variant="body2" color="textSecondary" fontWeight={700}>
                                     Learned about .NET MVC Core and developed an Online Doctor Appointment System called HalloDoc.
                                 </Typography>
+                                <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                    {skills.map((skill, index) => (
+                                        <Chip
+                                            key={index}
+                                            label={skill}
+                                            sx={{
+                                                borderRadius: '12px',
+                                                fontSize: '14px',
+                                                backgroundColor: '#ffffff', // White background
+                                                color: '#3f51b5', // Blue text color
+                                                border: '1px solid #3f51b5', // Blue border
+                                                px: 2, // Padding x-axis
+                                                py: 0.5, // Padding y-axis
+                                                fontWeight: 600,
+                                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                                                transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+                                                '&:hover': {
+                                                    backgroundColor: '#e3f2fd', // Very light blue background on hover
+                                                    color: '#1a237e', // Darker blue text on hover
+                                                    borderColor: '#1a237e', // Darker blue border on hover
+                                                    transform: 'scale(1.05)', // Slight scale effect on hover
+                                                },
+                                            }}
+
+                                        />
+                                    ))}
+                                </Box>
                             </CardContent>
                         </Card>
-
                     </TimelineContent>
                 </TimelineItem>
+
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
-                        <TimelineOppositeContent>
-                            <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                                August 2023
+                        <TimelineOppositeContent marginTop={2}>
+                            <Typography variant="body1" color="text.primary" fontWeight={700}>
+                                Jan - June 2023
                             </Typography>
                         </TimelineOppositeContent>
                     )}
                     <TimelineSeparator>
-                        <TimelineDot sx={{
-                            bgcolor: 'white',
-                            width: 30,
-                            height: 30,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}>
-                            <Avatar
-                                src={tatvasoft}
-                                sx={{
-                                    width: 30,
-                                    height: 30
-                                }}
-                            />
+                        <TimelineDot
+                            sx={{
+                                bgcolor: '#f5425d',
+                                width: 30,
+                                height: 30,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <ComputerIcon sx={{ color: '#ffffff' }} />
                         </TimelineDot>
-                        <TimelineConnector sx={{
-                            bgcolor: '#f5425d',
-                            width: 4
-                        }} />
+                        <TimelineConnector sx={{ bgcolor: '#f5425d', width: 4 }} />
                     </TimelineSeparator>
-                    <TimelineContent data-aos="flip-right"
+                    <TimelineContent
+                        data-aos="flip-right"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
                         sx={{
@@ -155,78 +222,203 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                             justifyContent: { sm: 'end' },
                         }}
                     >
-                        <Card sx={{
-                            width: {
-                                xs: 300,
-                                sm: 300,
-                                md: 400,
-                                lg: 500,
-                                xl: 600
-                            }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3', borderRadius: '8px', marginTop: -2
-                        }}>
-                            <CardContent>
-                                <Typography variant="h6" component="div">
-                                    Tatvasoft
+                        <Card
+                            sx={{
+                                width: {
+                                    xs: 300,
+                                    sm: 300,
+                                    md: 400,
+                                    lg: 500,
+                                    xl: 600
+                                },
+                                mt: 2,
+                                border: '2px solid #D3D3D3',
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}
+                        >
+                            <CardContent
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 1,
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'flex-end',
+                                        gap: 1,
+                                    }}
+                                >
+                                    <Typography
+                                        variant="h6"
+                                        component="div"
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 1,
+                                            mb: 1, // Margin bottom to add space below the title
+                                        }}
+                                        fontWeight={"bolder"}
+                                    >
+                                        Tatvasoft
+                                        <Avatar
+                                            src={tatvasoft}
+                                            sx={{
+                                                width: 30,
+                                                height: 30,
+                                                ml: 1,
+                                            }}
+                                        />
+                                    </Typography>
+                                    <Typography variant="subtitle1" fontWeight={"bold"}>
+                                        .NET Intern
+                                    </Typography>
+                                </Box>
+                                <Typography variant="body2" color="textSecondary" fontWeight={700}>
+                                    I learned about .NET MVC Core during my internship and also worked on a project called CI-PLATFORM.
                                 </Typography>
-                                <Typography variant="subtitle1">
-                                    ReactJS Intern
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    Learned about ReactJS and developed an e-commerce book selling platform.
-                                </Typography>
+                                <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                    {skills.map((skill, index) => (
+                                        <Chip
+                                            key={index}
+                                            label={skill}
+                                            sx={{
+                                                borderRadius: '12px',
+                                                fontSize: '14px',
+                                                backgroundColor: '#ffffff', // Light background
+                                                color: '#f5425d', // Pink text color
+                                                border: '1px solid #f5425d', // Pink border
+                                                px: 2, // Padding x-axis
+                                                py: 0.5, // Padding y-axis
+                                                fontWeight: 600,
+                                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                                                transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+                                                '&:hover': {
+                                                    backgroundColor: '#ffe0e0', // Very light pink background on hover
+                                                    color: '#f5425d', // Pink text color on hover (unchanged)
+                                                    borderColor: '#f5425d', // Pink border on hover
+                                                    transform: 'scale(1.05)', // Slight scale effect on hover
+                                                },
+                                            }}
+                                        />
+
+
+                                    ))}
+                                </Box>
                             </CardContent>
                         </Card>
                     </TimelineContent>
                 </TimelineItem>
+
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
-                        <TimelineOppositeContent>
-                            <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                                June 2022
+                        <TimelineOppositeContent marginTop={2}>
+                            <Typography variant="body1" color="text.primary" fontWeight={700}>
+                                June - Aug 2022
                             </Typography>
                         </TimelineOppositeContent>
                     )}
                     <TimelineSeparator>
-                        <TimelineDot sx={{
-                            bgcolor: '#1976d2',
-                            width: 30,
-                            height: 30,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)'
-                        }}>
-                            <StarIcon sx={{ color: '#ffffff' }} />
+                        <TimelineDot
+                            sx={{
+                                bgcolor: '#2f917d',
+                                width: 30,
+                                height: 30,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+                            }}
+                        >
+                            <ComputerIcon sx={{ color: '#ffffff' }} />
                         </TimelineDot>
-                        <TimelineConnector sx={{
-                            bgcolor: '#1976d2',
-                            width: 4
-                        }} />
+                        <TimelineConnector sx={{ bgcolor: '#2f917d', width: 4 }} />
                     </TimelineSeparator>
-                    <TimelineContent data-aos="flip-left"
+                    <TimelineContent
+                        data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
-
                     >
-                        <Card sx={{
-                            width: {
-                                xs: 300,
-                                sm: 300,
-                                md: 400,
-                                lg: 500,
-                                xl: 600
-                            }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3', borderRadius: '8px', marginTop: -2
-                        }}>
-                            <CardContent>
-                                <Typography variant="h6" component="div">
-                                    TwoWaits
+                        <Card
+                            sx={{
+                                width: {
+                                    xs: 300,
+                                    sm: 300,
+                                    md: 400,
+                                    lg: 500,
+                                    xl: 600
+                                },
+                                mt: 2,
+                                border: '2px solid #D3D3D3',
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}
+                        >
+                            <CardContent
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 1,
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    component="div"
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        mb: 1, // Margin bottom to add space below the title
+                                    }}
+                                    fontWeight={"bolder"}
+                                >
+                                    Tatvasoft
+                                    <Avatar
+                                        src={tatvasoft}
+                                        sx={{
+                                            width: 30,
+                                            height: 30,
+                                            ml: 1,
+                                        }}
+                                    />
                                 </Typography>
-                                <Typography variant="subtitle1">
-                                    Full Stack (MERN) Intern
+                                <Typography variant="subtitle1" fontWeight={"bold"}>
+                                    ReactJS Intern
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    Learned Full Stack Web Development with ReactJS, ExpressJS, NodeJS, and MongoDB. Created and deployed a small project.
+                                <Typography variant="body2" color="textSecondary" fontWeight={700}>
+                                    I learned about ReactJS Library and practiced it by making an e-commerce book selling platform.
                                 </Typography>
+                                <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                                    {skills.map((skill, index) => (
+                                        <Chip
+                                            key={index}
+                                            label={skill}
+                                            sx={{
+                                                borderRadius: '12px',
+                                                fontSize: '14px',
+                                                backgroundColor: '#fffdfe', // Light background
+                                                color: '#004d40', // Teal text color
+                                                border: '1px solid #004d40', // Teal border
+                                                px: 2, // Padding x-axis
+                                                py: 0.5, // Padding y-axis
+                                                fontWeight: 600,
+                                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                                                transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+                                                '&:hover': {
+                                                    backgroundColor: '#cce5e5', // Light teal background on hover
+                                                    color: '#004d40', // Teal text color on hover (unchanged)
+                                                    borderColor: '#004d40', // Teal border on hover (unchanged)
+                                                    transform: 'scale(1.05)', // Slight scale effect on hover
+                                                },
+                                            }}
+                                        />
+
+                                    ))}
+                                </Box>
+
                             </CardContent>
                         </Card>
                     </TimelineContent>

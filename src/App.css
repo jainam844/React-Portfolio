@@ -4,3 +4,13 @@ body{
   padding:  0px;
 
 }
+/* Add scroll padding to the body or container element */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on the height of your sticky navbar */
+}
+
+/* Add padding-top to ensure content visibility */
+section {
+  padding-top: 80px; /* Same as the scroll-padding-top value */
+}

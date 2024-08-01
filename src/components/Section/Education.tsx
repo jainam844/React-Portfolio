@@ -28,6 +28,7 @@ const EducationTimeline = () => {
 
   return (
     <Box
+      id="education"
       sx={{
         my: 5,
         px: { xs: 2, sm: 4 },
@@ -59,7 +60,7 @@ const EducationTimeline = () => {
         >
           <MenuBookOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
         </Box>
-        <Typography variant="h4" component="h1" gutterBottom marginBottom={-1} color={"#1976d2"} fontWeight={600}>
+        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
           Education
         </Typography>
       </Box>
@@ -67,9 +68,9 @@ const EducationTimeline = () => {
       <Timeline position={isXs ? "right" : "alternate"}>
         <TimelineItem sx={{ '&::before': { display: 'none' } }}>
           {!isXs && (
-            <TimelineOppositeContent>
-              <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                2016 - 2020
+            <TimelineOppositeContent marginTop={2}>
+              <Typography variant="body1" color="text.primary" fontWeight={700}>
+                2019 - 2023
               </Typography>
             </TimelineOppositeContent>
           )}
@@ -77,19 +78,35 @@ const EducationTimeline = () => {
             <TimelineDot sx={{ bgcolor: '#ff5722' }}>
               <School sx={{ color: 'white' }} />
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: '#ff8a65' }} />
           </TimelineSeparator>
           <TimelineContent data-aos="fade-left">
-            <Card sx={{ width: { xs: 250, sm: 300 }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3' ,borderRadius: '8px', marginTop: -2 }}>
+            <Card
+              sx={{
+                width: { xs: 260, sm: 320 },
+                mt: { xs: 2, sm: 2 },
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                boxShadow: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.03)',
+                  boxShadow: 6,
+                },
+              }}
+            >
               <CardContent>
-                <Typography variant="h6" component="div">
-                  University of Example
+                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+                  B.E in Computer
                 </Typography>
-                <Typography variant="subtitle1">
-                  Bachelor of Science in Computer Science
+                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                  A. D. Patel Institute of Technology
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Studied various aspects of computer science including algorithms, data structures, and software engineering.
+                <Typography variant="body2" color="text.secondary">
+                  Gujarat Technological University
+                </Typography>
+                <Typography variant="body1" color="text.primary" fontWeight={500}>
+                  CGPA: 8.15
                 </Typography>
               </CardContent>
             </Card>
@@ -98,9 +115,9 @@ const EducationTimeline = () => {
 
         <TimelineItem sx={{ '&::before': { display: 'none' } }}>
           {!isXs && (
-            <TimelineOppositeContent>
-              <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                2012 - 2016
+            <TimelineOppositeContent marginTop={2}>
+              <Typography variant="body1" color="text.primary" fontWeight={700}>
+                2018 - 2019
               </Typography>
             </TimelineOppositeContent>
           )}
@@ -108,7 +125,7 @@ const EducationTimeline = () => {
             <TimelineDot sx={{ bgcolor: '#3f51b5' }}>
               <SchoolOutlined sx={{ color: 'white' }} />
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: '#7986cb' }} />
           </TimelineSeparator>
           <TimelineContent
             data-aos="fade-right"
@@ -118,16 +135,31 @@ const EducationTimeline = () => {
               justifyContent: { sm: 'end' },
             }}
           >
-            <Card sx={{ width: { xs: 250, sm: 300 }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3', borderRadius: '8px', marginTop: -2 }}>
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  Example High School
+            <Card
+              sx={{
+                width: { xs: 260, sm: 320 },
+                mt: { xs: 2, sm: 2 },
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                boxShadow: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.03)',
+                  boxShadow: 6,
+                },
+              }}
+            >  <CardContent>
+                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+                  HSC
                 </Typography>
-                <Typography variant="subtitle1">
-                  High School Diploma
+                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                  M & M Mehta High School
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Focused on science and mathematics, participated in various extracurricular activities including coding clubs.
+                <Typography variant="body2" color="text.secondary">
+                  GSHSEB
+                </Typography>
+                <Typography variant="body1" color="text.primary" fontWeight={500}>
+                  Board: 70%
                 </Typography>
               </CardContent>
             </Card>
@@ -136,9 +168,9 @@ const EducationTimeline = () => {
 
         <TimelineItem sx={{ '&::before': { display: 'none' } }}>
           {!isXs && (
-            <TimelineOppositeContent>
-              <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                2508 - 2012
+            <TimelineOppositeContent marginTop={2}>
+              <Typography variant="body1" color="text.primary" fontWeight={700}>
+                2016-2017
               </Typography>
             </TimelineOppositeContent>
           )}
@@ -146,56 +178,35 @@ const EducationTimeline = () => {
             <TimelineDot sx={{ bgcolor: '#4caf50' }}>
               <Assignment sx={{ color: 'white' }} />
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: '#81c784' }} />
           </TimelineSeparator>
           <TimelineContent data-aos="fade-left">
-            <Card sx={{ width: { xs: 250, sm: 300 }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3', borderRadius: '8px', marginTop: -2 }}>
+            <Card
+              sx={{
+                width: { xs: 260, sm: 320 },
+                mt: { xs: 2, sm: 2 },
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                boxShadow: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.03)',
+                  boxShadow: 6,
+                },
+              }}
+            >
               <CardContent>
-                <Typography variant="h6" component="div">
-                  University of Example
+                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+                  SSC
                 </Typography>
-                <Typography variant="subtitle1">
-                  Bachelor of Science in Computer Science
+                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                  M & M Mehta High School
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Studied various aspects of computer science including algorithms, data structures, and software engineering.
+                <Typography variant="body2" color="text.secondary">
+                  GSEB
                 </Typography>
-              </CardContent>
-            </Card>
-          </TimelineContent>
-        </TimelineItem>
-
-        <TimelineItem sx={{ '&::before': { display: 'none' } }}>
-          {!isXs && (
-            <TimelineOppositeContent>
-              <Typography variant="body1" color="textSecondary" fontWeight={800}>
-                2504 - 2508
-              </Typography>
-            </TimelineOppositeContent>
-          )}
-          <TimelineSeparator>
-            <TimelineDot sx={{ bgcolor: '#ffeb3b' }}>
-              <Book sx={{ color: 'black' }} />
-            </TimelineDot>
-          </TimelineSeparator>
-          <TimelineContent
-            data-aos="fade-right"
-            data-aos-delay="400"
-            sx={{
-              display: { xs: 'block', sm: 'flex' },
-              justifyContent: { sm: 'end' },
-            }}
-          >
-            <Card sx={{ width: { xs: 250, sm: 300 }, mt: { xs: 2, sm: 2 }, border: '2px solid #D3D3D3', borderRadius: '8px', marginTop: -2 }}>
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  Example Elementary School
-                </Typography>
-                <Typography variant="subtitle1">
-                  Elementary School Diploma
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Learned fundamental skills and engaged in various educational and recreational activities.
+                <Typography variant="body1" color="text.primary" fontWeight={500}>
+                  Board: 82%
                 </Typography>
               </CardContent>
             </Card>
