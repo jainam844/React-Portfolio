@@ -23,7 +23,7 @@ const Index: React.FC<IndexProps> = ({ id }) => {
                 my: 5, // Margin top and bottom
                 px: { xs: 2, sm: 4 }, // Padding x
                 overflow: 'hidden',
-                paddingTop: '80px', // Adjust this value based on the height of your sticky navbar
+                paddingTop: '65px', // Adjust this value based on the height of your sticky navbar
             }}
             id={id}
         >

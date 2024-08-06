@@ -13,7 +13,7 @@ const AppBanner = () => {
 
   return (
     <Box
-        id="banner"
+      id="banner"
       sx={{
         position: 'relative',
         overflow: 'hidden',
@@ -21,7 +21,7 @@ const AppBanner = () => {
         flexDirection: { xs: 'column', sm: 'row' },
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '88vh', // Increased height
+        minHeight: '91vh', // Increased height
         textAlign: 'center',
         mt: { xs: 0, md: 0 },
         px: { xs: 2, sm: 4 },
@@ -35,7 +35,7 @@ const AppBanner = () => {
           background: 'linear-gradient(35deg,  #0e76a8, #1171ef)',
           zIndex: -1,
         },
-     
+
       }}
     >
       <Box
@@ -61,10 +61,10 @@ const AppBanner = () => {
             fontSize: { xs: 'lg', md: 'xl', lg: '2xl' },
             color: 'white',
             alignSelf: 'flex-center', // Align text to start
-            textAlign: 'left', 
+            textAlign: 'left',
             // Ensure text alignment is left
           }}
-          
+
         >
           He<span style={{ color: '#4c4b4b' }}>LL</span>o👋,
           <br />
@@ -82,7 +82,8 @@ const AppBanner = () => {
               display: 'inline-block',
               fontWeight: 'bold',
               fontSize: '35px',
-              color: 'rgb(0 0 0 / 54%)'
+              color: '       #c8e8ff',
+
             }}
           >
             <Typewriter
@@ -98,10 +99,10 @@ const AppBanner = () => {
         </Box>
         <Button
           variant="outlined"
-          href="/files/Stoman-Resume.pdf"
+          href=""
           download="Stoman-Resume.pdf"
           startIcon={<ArrowDownward />}
-          
+
           sx={{
             borderColor: '#11cdef',
             color: 'black',
@@ -114,9 +115,9 @@ const AppBanner = () => {
             mb: 2,
             py: 1.5,
             px: 3,
-            marginRight:"7rem"
+            marginRight: "7rem"
           }}
-          
+
         >
           Download CV
         </Button>
@@ -126,7 +127,7 @@ const AppBanner = () => {
             display: 'flex',
             justifyContent: 'center',
             mt: 4,
-             marginRight:"5rem"
+            marginRight: "5rem"
           }}
         >
           <Button

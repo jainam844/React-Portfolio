@@ -60,7 +60,19 @@ const EducationTimeline = () => {
         >
           <MenuBookOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
         </Box>
-        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
+        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600} sx={{
+          position: 'relative', // Allows the pseudo-element to be positioned relative to this text
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            height: '3px',
+            borderBottom: '2px dashed #0078ff', // Dashed line
+            width: '100px',
+            bottom: '-7px', // Adjust as needed for spacing
+            left: '35%', // Center the line
+            transform: 'translateX(-50%)', // Center the line
+          },
+        }}>
           Education
         </Typography>
       </Box>

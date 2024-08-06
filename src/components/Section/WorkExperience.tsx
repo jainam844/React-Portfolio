@@ -52,34 +52,67 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
             }}
             id={id}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 2,
-                }}
-            >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        width: '64px',
-                        height: '64px',
-                        backgroundColor: 'white',
-                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                        borderRadius: '50%',
-                        color: 'info.main',
-                    }}
-                >
-                    <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
-                </Box>
-                <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
-                    Work Experience
-                </Typography>
-            </Box>
-            <Timeline position={isXs ? "right" : "alternate"}>
+          <Box
+    sx={{
+      position: 'relative', // Allows the pseudo-element to be positioned relative to this box
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column', // Arrange items vertically
+      gap: 2,
+      mb: 4, // Margin-bottom to add some space after the header section
+    }}
+  >
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 2,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '64px',
+          height: '64px',
+          backgroundColor: 'white',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          borderRadius: '50%',
+          color: 'info.main',
+        }}
+      >
+        <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
+      </Box>
+
+      <Typography
+        variant="h4"
+        component="h1"
+        gutterBottom
+        marginBottom={0}
+        color={"#1976d2"}
+        fontWeight={600}
+        sx={{
+          position: 'relative', // Allows the pseudo-element to be positioned relative to this text
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            height: '3px',
+            borderBottom: '2px dashed #0078ff', // Dashed line
+            width: '100px',
+            bottom: '-7px', // Adjust as needed for spacing
+            left: '22%', // Center the line
+            transform: 'translateX(-50%)', // Center the line
+          },
+        }}
+      >
+        Work Experience
+      </Typography>
+    </Box>
+  </Box>
+            <Timeline position={isXs ? "right" : "alternate"} sx={{ padding: '0' }}>
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
                         <TimelineOppositeContent marginTop={2}>
@@ -121,7 +154,12 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
                                 borderRadius: '8px',
-                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                boxShadow: 3,
+                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                '&:hover': {
+                                    transform: 'scale(1.03)',
+                                    boxShadow: 6,
+                                },
                             }}
                         >
                             <CardContent
@@ -225,7 +263,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         <Card
                             sx={{
                                 width: {
-                                    xs: 300,
+                                    xs: 295,
                                     sm: 300,
                                     md: 400,
                                     lg: 500,
@@ -234,7 +272,12 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
                                 borderRadius: '8px',
-                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                boxShadow: 3,
+                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                '&:hover': {
+                                    transform: 'scale(1.03)',
+                                    boxShadow: 6,
+                                },
                             }}
                         >
                             <CardContent
@@ -248,7 +291,10 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     sx={{
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        alignItems: 'flex-end',
+                                        alignItems: {
+                                            xs: 'flex-start', // Align items to the start on small screens
+                                            sm: 'flex-end',   // Align items to the end on larger screens
+                                        },
                                         gap: 1,
                                     }}
                                 >
@@ -257,7 +303,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         component="div"
                                         sx={{
                                             display: 'flex',
-                                            alignItems: 'center',
+                                            alignItems: 'start',
                                             gap: 1,
                                             mb: 1, // Margin bottom to add space below the title
                                         }}
@@ -354,7 +400,12 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
                                 borderRadius: '8px',
-                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                boxShadow: 3,
+                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                '&:hover': {
+                                    transform: 'scale(1.03)',
+                                    boxShadow: 6,
+                                },
                             }}
                         >
                             <CardContent
