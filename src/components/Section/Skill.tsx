@@ -23,7 +23,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ imageSrc, altText, skillName }) =
     >
       <Box
         sx={{
-          backgroundColor: '#f0f0f0',
+          backgroundColor: '#F8F8FF',
           borderRadius: '50%',
           padding: 2,
           marginBottom: 1,

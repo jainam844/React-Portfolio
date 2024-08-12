@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography, Avatar, IconButton, Link } from '@mui/material';
-import { LinkedIn, Twitter, YouTube } from '@mui/icons-material';
-import contactIcon from '../../assets/time.gif'; // Example icon for address
+import { LinkedIn } from '@mui/icons-material';
 import coderboy from '../../assets/coderboy.jpg';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -43,7 +42,7 @@ const Footer: React.FC<ContactSectionProps> = ({ id }) => {
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between' }}>
                     {/* Social Media Links */}
                     <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: { xs: 3, md: 0 } }}>
-                        <Typography variant="h5" sx={{ mb: 2, marginLeft: '3rem' }}>Reach Out to me!</Typography>
+                        <Typography variant="h5" sx={{ mb: 2, marginLeft: '1rem' }}>Reach Out to me!</Typography>
                         <Box>
                         <IconButton href="mailto:shahjainam491@gmail.com" target="_blank" color="inherit" aria-label="YouTube">
                                 <EmailIcon sx={iconStyle}/>
@@ -82,7 +81,7 @@ const Footer: React.FC<ContactSectionProps> = ({ id }) => {
                             <LocationOnIcon />
                         </Avatar>
                         <Typography variant="body2" sx={{ fontSize: '16px', fontWeight: 500 }}>
-                            Godhra, Gujarat, India
+                         Ahmedabad, Gujarat, India
                         </Typography>
                     </Box>
 

@@ -72,19 +72,7 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
                 >
                     <ComputerSharpIcon style={{ fontSize: '32px', color: '#1976d2' }} />
                 </Box>
-                <Typography variant="h4" component="h1" marginBottom={0} color={"#1976d2"} fontWeight={600} sx={{
-                    position: 'relative', // Allows the pseudo-element to be positioned relative to this text
-                    '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        height: '3px',
-                        borderBottom: '2px dashed #0078ff', // Dashed line
-                        width: '80px',
-                        bottom: '-7px', // Adjust as needed for spacing
-                        left: '38%', // Center the line
-                        transform: 'translateX(-50%)', // Center the line
-                    },
-                }}>
+                <Typography variant="h4" component="h1" marginBottom={0} color={"#1976d2"} fontWeight={600}> 
                     Projects
                 </Typography>
             </Box>

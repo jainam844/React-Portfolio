@@ -31,6 +31,6 @@ export const smoothScroll = (targetId: string) => {
       animateScroll();
     };
 
-    scroll(offsetTop, 10); 
+    scroll(offsetTop, 10);
   }
 };

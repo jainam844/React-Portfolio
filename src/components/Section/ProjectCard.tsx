@@ -17,41 +17,46 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, link }) => {
   return (
-    <Card sx={{ 
-      maxWidth: 345, 
-      borderRadius: '16px', 
-      boxShadow: '0px 12px 24px rgba(0, 0, 0, 0.1)',
-      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-      background: 'linear-gradient(145deg, #f5f7fa, #cdd8e9)',
-      '&:hover': {
-        transform: 'scale(1.05)',
-        boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.2)',
-      },
-      overflow: 'hidden', // Ensures no content overflows the card's borders
-    }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        borderRadius: '20px',
+        boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+        background: 'linear-gradient(135deg, #f7f9fc, #a6bedd)',
+        '&:hover': {
+          transform: 'scale(1.05)',
+          boxShadow: '0 12px 35px rgba(0, 0, 0, 0.2)',
+        },
+        overflow: 'hidden',
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           height="180"
           image={image}
           alt={title}
-          sx={{ 
-            borderTopLeftRadius: '16px', 
-            borderTopRightRadius: '16px',
-            objectFit: 'cover', // Ensures the image covers the area without distortion
+          sx={{
+            objectFit: 'cover',
           }}
         />
         <CardContent sx={{ height: 150, overflow: 'hidden' }}>
-          <Typography gutterBottom variant="h6" component="div" sx={{ fontWeight: 600 }}>
+          <Typography
+            gutterBottom
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 700, color: '#2c3e50' }}
+          >
             {title}
           </Typography>
-          <Typography 
-            variant="body2" 
-            color="text.secondary" 
+          <Typography
+            variant="body2"
+            color="text.secondary"
             sx={{
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 4, // Limits to 4 lines
+              WebkitLineClamp: 4,
               overflow: 'hidden',
               textOverflow: 'ellipsis',
             }}
@@ -66,11 +71,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, li
           justifyContent: 'center',
           p: 2,
           borderTop: '1px solid #ddd',
-          backgroundColor: '#f5f5f5',
-          borderBottomLeftRadius: '16px',
-          borderBottomRightRadius: '16px',
+          backgroundColor: '#f1f3f5',
+          borderBottomLeftRadius: '20px',
+          borderBottomRightRadius: '20px',
           '&:hover': {
-            backgroundColor: '#eaeaea',
+            backgroundColor: '#e1e5e8',
           },
         }}
       >
@@ -81,18 +86,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, li
           variant="contained"
           startIcon={<GitHubIcon />}
           sx={{
-            backgroundColor: '#4a4848;',
+            backgroundColor: '#2c3e50',
             '&:hover': {
-              backgroundColor: '#0056b3',
+              backgroundColor: '#34495e',
             },
             textTransform: 'none',
-            borderRadius: '20px',
-            padding: '6px 12px',
-            fontWeight: 500,
-            boxShadow: '0px 6px 12px rgba(0, 123, 255, 0.5)',
+            borderRadius: '30px',
+            padding: '8px 16px',
+            fontWeight: 600,
+            boxShadow: '0 6px 12px rgba(44, 62, 80, 0.2)',
           }}
         >
-          GitHub
+          View on GitHub
         </Button>
       </Box>
     </Card>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
 import {
   Timeline,
@@ -10,7 +10,7 @@ import {
   TimelineOppositeContent
 } from '@mui/lab';
 import { Typography, Box, Card, CardContent } from '@mui/material';
-import { School, SchoolOutlined, Assignment, Book } from '@mui/icons-material';
+import { School, SchoolOutlined, Assignment, } from '@mui/icons-material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
@@ -60,19 +60,7 @@ const EducationTimeline = () => {
         >
           <MenuBookOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
         </Box>
-        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600} sx={{
-          position: 'relative', // Allows the pseudo-element to be positioned relative to this text
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            height: '3px',
-            borderBottom: '2px dashed #0078ff', // Dashed line
-            width: '100px',
-            bottom: '-7px', // Adjust as needed for spacing
-            left: '35%', // Center the line
-            transform: 'translateX(-50%)', // Center the line
-          },
-        }}>
+        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
           Education
         </Typography>
       </Box>
@@ -95,31 +83,59 @@ const EducationTimeline = () => {
           <TimelineContent data-aos="fade-left">
             <Card
               sx={{
-                width: { xs: 260, sm: 320 },
+                width: { xs: 260, sm: 340 },
                 mt: { xs: 2, sm: 2 },
                 border: '1px solid #ccc',
                 borderRadius: '12px',
                 boxShadow: 3,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
-                  transform: 'scale(1.03)',
-                  boxShadow: 6,
+                  transform: 'scale(1.02)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.15)',
                 },
+                backgroundColor: '#fff', // Consistent background color
               }}
             >
-              <CardContent>
-                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+              <CardContent sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start', // Align content to the left
+              }}>
+                <Typography variant="h6" component="div" fontWeight={600} color="#333">
                   B.E in Computer
                 </Typography>
-                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                <Typography
+                  variant="subtitle2"
+                  color="#666"
+                  mb={1}
+                  display="flex"
+                  alignItems="center"
+                  sx={{
+                    fontSize: {
+                      xs: '0.8rem', // Small font size on extra small screens
+                      sm: '0.875rem', // Slightly larger on small screens
+                      md: '1rem', // Default size for medium screens and up
+                    },
+                  }}
+                >
                   A. D. Patel Institute of Technology
+                  <SchoolOutlined
+                    sx={{
+                      fontSize: '18px',
+                      color: '#999',
+                      mr: 1,
+                    }}
+                  />
                 </Typography>
+
                 <Typography variant="body2" color="text.secondary">
                   Gujarat Technological University
                 </Typography>
-                <Typography variant="body1" color="text.primary" fontWeight={500}>
-                  CGPA: 8.15
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 1 }}>
+                  <Typography variant="body2" color="text.primary" fontWeight={500}>
+                    CGPA: 8.15
+                  </Typography>
+                </Box>
               </CardContent>
             </Card>
           </TimelineContent>
@@ -149,30 +165,47 @@ const EducationTimeline = () => {
           >
             <Card
               sx={{
-                width: { xs: 260, sm: 320 },
+                width: { xs: 260, sm: 340 },
                 mt: { xs: 2, sm: 2 },
-                border: '1px solid #ccc',
-                borderRadius: '12px',
-                boxShadow: 3,
+                borderRadius: '16px',
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
-                  transform: 'scale(1.03)',
-                  boxShadow: 6,
+                  transform: 'scale(1.02)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.15)',
                 },
+                backgroundColor: '#fff', // Consistent background color
               }}
-            >  <CardContent>
-                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+            >
+              <CardContent sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start', // Align content to the left
+              }}>
+                <Typography variant="h6" component="div" fontWeight={600} color="#333">
                   HSC
+
                 </Typography>
-                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'}  sx={{
+                    fontSize: {
+                      xs: '0.8rem', // Small font size on extra small screens
+                      sm: '0.875rem', // Slightly larger on small screens
+                      md: '1rem', // Default size for medium screens and up
+                    },
+                  }}>
                   M & M Mehta High School
+                  <SchoolOutlined sx={{ fontSize: '18px', color: '#999', mr: 1 }} />
+
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   GSHSEB
                 </Typography>
-                <Typography variant="body1" color="text.primary" fontWeight={500}>
-                  Board: 70%
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 1 }}>
+                  {/* <SchoolOutlined sx={{ fontSize: '18px', color: '#999', mr: 1 }} /> */}
+                  <Typography variant="body2" color="text.primary" fontWeight={500}>
+                    Board: 70%
+                  </Typography>
+                </Box>
               </CardContent>
             </Card>
           </TimelineContent>
@@ -195,31 +228,45 @@ const EducationTimeline = () => {
           <TimelineContent data-aos="fade-left">
             <Card
               sx={{
-                width: { xs: 260, sm: 320 },
+                width: { xs: 260, sm: 340 },
                 mt: { xs: 2, sm: 2 },
-                border: '1px solid #ccc',
-                borderRadius: '12px',
-                boxShadow: 3,
+                borderRadius: '16px',
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
-                  transform: 'scale(1.03)',
-                  boxShadow: 6,
+                  transform: 'scale(1.02)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.15)',
                 },
+                backgroundColor: '#fff', // Consistent background color
               }}
             >
-              <CardContent>
-                <Typography variant="h5" component="div" fontWeight={600} color="#333">
+              <CardContent sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start', // Align content to the left
+              }}>
+                <Typography variant="h6" component="div" fontWeight={600} color="#333">
                   SSC
                 </Typography>
-                <Typography variant="subtitle1" fontWeight={500} color="#666">
+                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'}  sx={{
+                    fontSize: {
+                      xs: '0.8rem', // Small font size on extra small screens
+                      sm: '0.875rem', // Slightly larger on small screens
+                      md: '1rem', // Default size for medium screens and up
+                    },
+                  }}>
                   M & M Mehta High School
+                  <SchoolOutlined sx={{ fontSize: '18px', color: '#999', mr: 1 }} />
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   GSEB
                 </Typography>
-                <Typography variant="body1" color="text.primary" fontWeight={500}>
-                  Board: 82%
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 1 }}>
+
+                  <Typography variant="body2" color="text.primary" fontWeight={500}>
+                    Board: 82%
+                  </Typography>
+                </Box>
               </CardContent>
             </Card>
           </TimelineContent>

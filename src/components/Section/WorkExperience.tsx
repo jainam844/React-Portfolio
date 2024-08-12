@@ -11,7 +11,7 @@ import {
     TimelineOppositeContent
 } from '@mui/lab';
 import { Typography, Box, Card, CardContent, Avatar, Chip } from '@mui/material';
-import { Star as StarIcon, Computer as ComputerIcon } from '@mui/icons-material';
+import { Computer as ComputerIcon } from '@mui/icons-material';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import tatvasoft from '../../assets/tatvasoft.png';
@@ -52,66 +52,54 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
             }}
             id={id}
         >
-          <Box
-    sx={{
-      position: 'relative', // Allows the pseudo-element to be positioned relative to this box
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'column', // Arrange items vertically
-      gap: 2,
-      mb: 4, // Margin-bottom to add some space after the header section
-    }}
-  >
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 2,
-      }}
-    >
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '64px',
-          height: '64px',
-          backgroundColor: 'white',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          borderRadius: '50%',
-          color: 'info.main',
-        }}
-      >
-        <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
-      </Box>
+            <Box
+                sx={{
+                    position: 'relative', // Allows the pseudo-element to be positioned relative to this box
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column', // Arrange items vertically
+                    gap: 2,
+                    mb: 4, // Margin-bottom to add some space after the header section
+                }}
+            >
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 2,
+                    }}
+                >
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: '64px',
+                            height: '64px',
+                            backgroundColor: 'white',
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                            borderRadius: '50%',
+                            color: 'info.main',
+                        }}
+                    >
+                        <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
+                    </Box>
 
-      <Typography
-        variant="h4"
-        component="h1"
-        gutterBottom
-        marginBottom={0}
-        color={"#1976d2"}
-        fontWeight={600}
-        sx={{
-          position: 'relative', // Allows the pseudo-element to be positioned relative to this text
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            height: '3px',
-            borderBottom: '2px dashed #0078ff', // Dashed line
-            width: '100px',
-            bottom: '-7px', // Adjust as needed for spacing
-            left: '22%', // Center the line
-            transform: 'translateX(-50%)', // Center the line
-          },
-        }}
-      >
-        Work Experience
-      </Typography>
-    </Box>
-  </Box>
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                        gutterBottom
+                        marginBottom={0}
+                        color={"#1976d2"}
+                        fontWeight={600}
+                       
+                    >
+                        Work Experience
+                    </Typography>
+                </Box>
+            </Box>
             <Timeline position={isXs ? "right" : "alternate"} sx={{ padding: '0' }}>
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
@@ -145,20 +133,21 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         <Card
                             sx={{
                                 width: {
-                                    xs: 300,
+                                    xs: 265,
                                     sm: 300,
                                     md: 400,
                                     lg: 500,
-                                    xl: 600
+                                    xl: 600,
                                 },
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
-                                borderRadius: '8px',
-                                boxShadow: 3,
+                                borderRadius: '12px',
+                                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                                background: 'linear-gradient(135deg, #ffffff, #ffffff)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                                 '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    boxShadow: 6,
+                                    transform: 'scale(1.05)',
+                                    boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)',
                                 },
                             }}
                         >
@@ -166,7 +155,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: 2,
+                                    gap: 1,
                                 }}
                             >
                                 <Typography
@@ -175,10 +164,14 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: 1,
-                                        mb: 1, // Margin bottom to add space below the title
+                                
+                                        background: 'linear-gradient(90deg, #3f51b5 0%, #2575fc 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        fontWeight: 'bolder',
+                                        color: '#333', // Darker text color for better contrast
+
                                     }}
-                                    fontWeight={"bolder"}
                                 >
                                     Tatvasoft
                                     <Avatar
@@ -186,14 +179,26 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         sx={{
                                             width: 30,
                                             height: 30,
-                                            ml: 1, // Adds left margin to the icon for more spacing
+                                            ml: 1,
                                         }}
                                     />
                                 </Typography>
-                                <Typography variant="subtitle1" fontWeight={"bold"}>
+                                <Typography
+                                    variant="subtitle1"
+                                    sx={{
+                                        color: '#555', // Slightly lighter but still contrasting
+                                        fontWeight: 'bolder',
+                                    }}
+                                >
                                     Full Stack Developer
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary" fontWeight={700}>
+                                <Typography
+                                    variant="body2"
+                                    sx={{
+                                        color: '#666', // Medium gray for the body text
+                                        fontWeight: 700,
+                                    }}
+                                >
                                     Learned about .NET MVC Core and developed an Online Doctor Appointment System called HalloDoc.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -204,27 +209,27 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                             sx={{
                                                 borderRadius: '12px',
                                                 fontSize: '14px',
-                                                backgroundColor: '#ffffff', // White background
-                                                color: '#3f51b5', // Blue text color
-                                                border: '1px solid #3f51b5', // Blue border
-                                                px: 2, // Padding x-axis
-                                                py: 0.5, // Padding y-axis
+                                                backgroundColor: '#ffffff',
+                                                color: '#3f51b5',
+                                                border: '1px solid #3f51b5',
+                                                px: 1,
+                                                py: 0.5,
                                                 fontWeight: 600,
                                                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
                                                 transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
                                                 '&:hover': {
-                                                    backgroundColor: '#e3f2fd', // Very light blue background on hover
-                                                    color: '#1a237e', // Darker blue text on hover
-                                                    borderColor: '#1a237e', // Darker blue border on hover
-                                                    transform: 'scale(1.05)', // Slight scale effect on hover
+                                                    backgroundColor: '#e3f2fd',
+                                                    color: '#1a237e',
+                                                    borderColor: '#1a237e',
+                                                    transform: 'scale(1.05)',
                                                 },
                                             }}
-
                                         />
                                     ))}
                                 </Box>
                             </CardContent>
                         </Card>
+
                     </TimelineContent>
                 </TimelineItem>
 
@@ -263,20 +268,21 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         <Card
                             sx={{
                                 width: {
-                                    xs: 295,
+                                    xs: 265,
                                     sm: 300,
                                     md: 400,
                                     lg: 500,
-                                    xl: 600
+                                    xl: 600,
                                 },
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
-                                borderRadius: '8px',
-                                boxShadow: 3,
+                                borderRadius: '12px',
+                                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                                background: 'linear-gradient(135deg, #ffffff, #ffffff)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                                 '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    boxShadow: 6,
+                                    transform: 'scale(1.05)',
+                                    boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)',
                                 },
                             }}
                         >
@@ -303,9 +309,14 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         component="div"
                                         sx={{
                                             display: 'flex',
-                                            alignItems: 'start',
-                                            gap: 1,
-                                            mb: 1, // Margin bottom to add space below the title
+                                            alignItems: 'center',
+                                           
+                                            background: 'linear-gradient(90deg, #f5425d 0%, #f5425d 100%)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            fontWeight: 'bolder',
+                                            color: '#333', // Darker text color for better contrast
+
                                         }}
                                         fontWeight={"bolder"}
                                     >
@@ -319,11 +330,18 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                             }}
                                         />
                                     </Typography>
-                                    <Typography variant="subtitle1" fontWeight={"bold"}>
+                                    <Typography variant="subtitle1"
+                                        sx={{
+                                            color: '#555', // Slightly lighter but still contrasting
+                                            fontWeight: 'bolder',
+                                        }}>
                                         .NET Intern
                                     </Typography>
                                 </Box>
-                                <Typography variant="body2" color="textSecondary" fontWeight={700}>
+                                <Typography variant="body2" color="textSecondary" sx={{
+                                    color: '#555', // Slightly lighter but still contrasting
+                                    fontWeight: 700,
+                                }} >
                                     I learned about .NET MVC Core during my internship and also worked on a project called CI-PLATFORM.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -337,19 +355,20 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                                 backgroundColor: '#ffffff', // Light background
                                                 color: '#f5425d', // Pink text color
                                                 border: '1px solid #f5425d', // Pink border
-                                                px: 2, // Padding x-axis
+                                                px: 1, // Padding x-axis
                                                 py: 0.5, // Padding y-axis
                                                 fontWeight: 600,
                                                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
                                                 transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
                                                 '&:hover': {
-                                                    backgroundColor: '#ffe0e0', // Very light pink background on hover
+                                                    backgroundColor: '#ffe6eb', // Very light pink background on hover
                                                     color: '#f5425d', // Pink text color on hover (unchanged)
                                                     borderColor: '#f5425d', // Pink border on hover
                                                     transform: 'scale(1.05)', // Slight scale effect on hover
                                                 },
                                             }}
                                         />
+
 
 
                                     ))}
@@ -391,20 +410,21 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         <Card
                             sx={{
                                 width: {
-                                    xs: 300,
+                                    xs: 265,
                                     sm: 300,
                                     md: 400,
                                     lg: 500,
-                                    xl: 600
+                                    xl: 600,
                                 },
                                 mt: 2,
                                 border: '2px solid #D3D3D3',
-                                borderRadius: '8px',
-                                boxShadow: 3,
+                                borderRadius: '12px',
+                                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                                background: 'linear-gradient(135deg, #ffffff, #ffffff)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                                 '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    boxShadow: 6,
+                                    transform: 'scale(1.05)',
+                                    boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.2)',
                                 },
                             }}
                         >
@@ -421,8 +441,13 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: 1,
-                                        mb: 1, // Margin bottom to add space below the title
+                                      
+                                        background: 'linear-gradient(90deg, #2f917d 0%, #2f917d 100%)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        fontWeight: 'bolder',
+                                        color: '#333', // Darker text color for better contrast
+
                                     }}
                                     fontWeight={"bolder"}
                                 >
@@ -436,7 +461,11 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         }}
                                     />
                                 </Typography>
-                                <Typography variant="subtitle1" fontWeight={"bold"}>
+                                <Typography variant="subtitle1"
+                                    sx={{
+                                        color: '#555', // Slightly lighter but still contrasting
+                                        fontWeight: 'bolder',
+                                    }}>
                                     ReactJS Intern
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" fontWeight={700}>
@@ -453,7 +482,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                                 backgroundColor: '#fffdfe', // Light background
                                                 color: '#004d40', // Teal text color
                                                 border: '1px solid #004d40', // Teal border
-                                                px: 2, // Padding x-axis
+                                                px: 1, // Padding x-axis
                                                 py: 0.5, // Padding y-axis
                                                 fontWeight: 600,
                                                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -469,7 +498,6 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
 
                                     ))}
                                 </Box>
-
                             </CardContent>
                         </Card>
                     </TimelineContent>
