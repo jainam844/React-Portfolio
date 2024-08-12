@@ -88,7 +88,7 @@ const Index: React.FC<IndexProps> = ({ id }) => {
                         ⚡ Full Stack <span style={{ color: 'black' }}>Web Developer!</span>
                     </Typography>
                     <Typography component="p" sx={{ mb: 2, fontWeight: 500 }}>
-                        Welcome to my portfolio! I'm a passionate Full Stack Web Developer from India, currently pursuing a Bachelor of Engineering in Computer Engineering. With expertise in React, Node.js, Express.js, MongoDB, HTML, CSS, Git, and GitHub, I specialize in creating dynamic, user-friendly web applications.
+                        Welcome to my portfolio! I'm a passionate Full Stack Web Developer from India, having completed my Bachelor of Engineering in Computer Engineering. With expertise in React, Node.js, Express.js, MongoDB, HTML, CSS, Git, and GitHub, I specialize in creating dynamic, user-friendly web applications.
                     </Typography>
                     <Typography variant="body1" component="p" sx={{ mb: 2, fontWeight: 500 }}>
                         My journey in technology has been fueled by an insatiable curiosity and a commitment to continuous learning. Whether it's designing sleek user interfaces or developing efficient backend systems, I am dedicated to delivering high-quality, innovative solutions. Stay tuned as I share my latest projects and insights in the world of web development.

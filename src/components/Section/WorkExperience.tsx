@@ -94,7 +94,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         marginBottom={0}
                         color={"#1976d2"}
                         fontWeight={600}
-                       
+
                     >
                         Work Experience
                     </Typography>
@@ -164,13 +164,11 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                
                                         background: 'linear-gradient(90deg, #3f51b5 0%, #2575fc 100%)',
                                         WebkitBackgroundClip: 'text',
                                         WebkitTextFillColor: 'transparent',
                                         fontWeight: 'bolder',
                                         color: '#333', // Darker text color for better contrast
-
                                     }}
                                 >
                                     Tatvasoft
@@ -199,7 +197,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         fontWeight: 700,
                                     }}
                                 >
-                                    Learned about .NET MVC Core and developed an Online Doctor Appointment System called HalloDoc.
+        Worked on Angular, .NET Core Web API, MongoDB, and React.js.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                                     {skills.map((skill, index) => (
@@ -228,6 +226,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     ))}
                                 </Box>
                             </CardContent>
+
                         </Card>
 
                     </TimelineContent>
@@ -310,7 +309,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         sx={{
                                             display: 'flex',
                                             alignItems: 'center',
-                                           
+
                                             background: 'linear-gradient(90deg, #f5425d 0%, #f5425d 100%)',
                                             WebkitBackgroundClip: 'text',
                                             WebkitTextFillColor: 'transparent',
@@ -441,7 +440,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                      
+
                                         background: 'linear-gradient(90deg, #2f917d 0%, #2f917d 100%)',
                                         WebkitBackgroundClip: 'text',
                                         WebkitTextFillColor: 'transparent',
