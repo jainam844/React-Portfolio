@@ -22,10 +22,10 @@ const socialLinks = {
 };
 
 const pages = [
-  { name: 'Projects', id: 'projects' },
   { name: 'About Me', id: 'about' },
   { name: 'Experience', id: 'experience' },
   { name: 'Skills', id: 'skill' },
+  { name: 'Projects', id: 'projects' },
   { name: 'Contact', id: 'contact' },
 ];
 
