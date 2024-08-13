@@ -25,7 +25,7 @@ const skills: Skill[] = [
     { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/7c0dzHB62nwu4sE8oF2J.png', altText: 'MongoDB', skillName: 'MongoDB' },
     { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/zf9yKyATw2Gb2YCCj74B.png', altText: '.NET', skillName: '.NET' },
     { imageSrc: 'https://img.icons8.com/?size=512&id=laYYF3dV0Iew&format=png', altText: 'SQL Server', skillName: 'SQL Server' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/D21ALFqlmSZfjMeskqLp.png', altText: 'PostgreSQL', skillName: 'PostgreSQL' },
+    // { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/D21ALFqlmSZfjMeskqLp.png', altText: 'PostgreSQL', skillName: 'PostgreSQL' },
     { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/r4KbD0cM7U9bedGoeAJd.png', altText: 'Github', skillName: 'Github' },
     { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/aEN5B72kMHDhDSRcCRSS.png', altText: 'Git', skillName: 'Git' },
 ];
@@ -48,33 +48,41 @@ const SkillsSection: React.FC<SkillProps> = ({ id }) => {
                 paddingTop: '80px', // Adjust based on your navbar height
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 2,
-                }}
-            >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        width: '64px',
-                        height: '64px',
-                        backgroundColor: 'white',
-                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                        borderRadius: '50%',
-                        color: 'info.main',
-                    }}
-                >
-                    <EngineeringIcon style={{ fontSize: '32px', color: '#1976d2' }} />
-                </Box>
-                <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600} >
-                    Skills
-                </Typography>
-            </Box>
+       <Box
+  sx={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 2,
+    textAlign: 'center', // Center the text horizontally
+  }}
+>
+  <Box
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '64px',
+      height: '64px',
+      backgroundColor: 'white',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      borderRadius: '50%',
+      color: 'info.main',
+        marginBottom: '1rem'
+    }}
+  >
+    <EngineeringIcon style={{ fontSize: '32px', color: '#1976d2' }} />
+  </Box>
+  <Typography
+    variant="h4"
+    component="h1"
+    gutterBottom
+    color={"#1976d2"}
+    fontWeight={600}
+  >
+    Skills
+  </Typography>
+</Box>
 
             <Box
                 sx={{

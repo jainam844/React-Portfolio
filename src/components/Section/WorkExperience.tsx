@@ -61,6 +61,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                     flexDirection: 'column', // Arrange items vertically
                     gap: 2,
                     mb: 4, // Margin-bottom to add some space after the header section
+                    textAlign: 'center', // Center the text horizontally
                 }}
             >
                 <Box
@@ -82,6 +83,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                             borderRadius: '50%',
                             color: 'info.main',
+                            marginBottom: '1rem'
                         }}
                     >
                         <WorkOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
@@ -91,15 +93,14 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                         variant="h4"
                         component="h1"
                         gutterBottom
-                        marginBottom={0}
                         color={"#1976d2"}
                         fontWeight={600}
-
                     >
                         Work Experience
                     </Typography>
                 </Box>
             </Box>
+
             <Timeline position={isXs ? "right" : "alternate"} sx={{ padding: '0' }}>
                 <TimelineItem sx={{ '&::before': { display: 'none' } }}>
                     {!isXs && (
@@ -197,7 +198,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                         fontWeight: 700,
                                     }}
                                 >
-        Worked on Angular, .NET Core Web API, MongoDB, and React.js.
+                                    Worked on Angular, .NET Core Web API, MongoDB, and React.js.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                                     {skills.map((skill, index) => (

@@ -54,6 +54,7 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: 2,  // Adjusts the gap between the icon and the text
+                    textAlign: 'center', // Center the text horizontally
                 }}
             >
                 <Box
@@ -67,15 +68,22 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
                         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                         borderRadius: '50%',
                         color: 'info.main',
-
+                        
                     }}
                 >
                     <ComputerSharpIcon style={{ fontSize: '32px', color: '#1976d2' }} />
                 </Box>
-                <Typography variant="h4" component="h1" marginBottom={0} color={"#1976d2"} fontWeight={600}> 
+                <Typography
+                    variant="h4"
+                    component="h1"
+                    marginBottom={0}
+                    color={"#1976d2"}
+                    fontWeight={600}
+                >
                     Projects
                 </Typography>
             </Box>
+
 
             <Box sx={{ padding: 4 }}>
                 <Grid container spacing={4} justifyContent="center">

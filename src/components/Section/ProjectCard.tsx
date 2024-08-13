@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, li
         borderRadius: '20px',
         boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
         transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-        background: 'linear-gradient(135deg, #f7f9fc, #a6bedd)',
+        background: 'linear-gradient(135deg, #f7f9fc, #859ab5)',
         '&:hover': {
           transform: 'scale(1.05)',
           boxShadow: '0 12px 35px rgba(0, 0, 0, 0.2)',

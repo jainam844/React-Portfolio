@@ -43,6 +43,7 @@ const EducationTimeline = () => {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 2,  // Adjusts the gap between the icon and the text
+          textAlign: 'center', // Centers text inside the Box
         }}
       >
         <Box
@@ -56,11 +57,18 @@ const EducationTimeline = () => {
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
             borderRadius: '50%',
             color: 'info.main',
+            marginBottom: '1rem'
           }}
         >
           <MenuBookOutlinedIcon style={{ fontSize: '32px', color: '#1976d2' }} />
         </Box>
-        <Typography variant="h4" component="h1" gutterBottom marginBottom={0} color={"#1976d2"} fontWeight={600}>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          color={"#1976d2"}
+          fontWeight={600}
+        >
           Education
         </Typography>
       </Box>
@@ -167,8 +175,9 @@ const EducationTimeline = () => {
               sx={{
                 width: { xs: 260, sm: 340 },
                 mt: { xs: 2, sm: 2 },
-                borderRadius: '16px',
-                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                boxShadow: 3,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
                   transform: 'scale(1.02)',
@@ -186,13 +195,13 @@ const EducationTimeline = () => {
                   HSC
 
                 </Typography>
-                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'}  sx={{
-                    fontSize: {
-                      xs: '0.8rem', // Small font size on extra small screens
-                      sm: '0.875rem', // Slightly larger on small screens
-                      md: '1rem', // Default size for medium screens and up
-                    },
-                  }}>
+                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'} sx={{
+                  fontSize: {
+                    xs: '0.8rem', // Small font size on extra small screens
+                    sm: '0.875rem', // Slightly larger on small screens
+                    md: '1rem', // Default size for medium screens and up
+                  },
+                }}>
                   M & M Mehta High School
                   <SchoolOutlined sx={{ fontSize: '18px', color: '#999', mr: 1 }} />
 
@@ -230,8 +239,9 @@ const EducationTimeline = () => {
               sx={{
                 width: { xs: 260, sm: 340 },
                 mt: { xs: 2, sm: 2 },
-                borderRadius: '16px',
-                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                boxShadow: 3,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
                   transform: 'scale(1.02)',
@@ -248,13 +258,13 @@ const EducationTimeline = () => {
                 <Typography variant="h6" component="div" fontWeight={600} color="#333">
                   SSC
                 </Typography>
-                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'}  sx={{
-                    fontSize: {
-                      xs: '0.8rem', // Small font size on extra small screens
-                      sm: '0.875rem', // Slightly larger on small screens
-                      md: '1rem', // Default size for medium screens and up
-                    },
-                  }}>
+                <Typography variant="subtitle2" color="#666" mb={1} display={'flex'} alignItems={'center'} sx={{
+                  fontSize: {
+                    xs: '0.8rem', // Small font size on extra small screens
+                    sm: '0.875rem', // Slightly larger on small screens
+                    md: '1rem', // Default size for medium screens and up
+                  },
+                }}>
                   M & M Mehta High School
                   <SchoolOutlined sx={{ fontSize: '18px', color: '#999', mr: 1 }} />
                 </Typography>

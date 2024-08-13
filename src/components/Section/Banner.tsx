@@ -7,6 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import { Typewriter } from 'react-simple-typewriter';
 import developerLight from '../../assets/coder.gif';
 import developerDark from '../../assets/coder.gif';
+import pdf from "../../assets/Jainam.CV.pdf";
 
 const AppBanner = () => {
   const isDarkTheme = false; // Set this based on your actual dark theme check
@@ -66,7 +67,7 @@ const AppBanner = () => {
           }}
 
         >
-          He<span style={{ color: '#4c4b4b' }}>LL</span>o👋,
+          He<span style={{ color: '#d1e8ff' }}>LL</span>o👋,
           <br />
           <span style={{ color: "white" }}>I'm Jainam Shah</span>
         </Typography>
@@ -99,8 +100,8 @@ const AppBanner = () => {
         </Box>
         <Button
           variant="outlined"
-          href=""
-          download="Stoman-Resume.pdf"
+          href={pdf}
+          download="cv.pdf"
           startIcon={<ArrowDownward />}
 
           sx={{
@@ -121,6 +122,7 @@ const AppBanner = () => {
         >
           Download CV
         </Button>
+
 
         <Box
           sx={{
