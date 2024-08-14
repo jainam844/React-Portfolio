@@ -31,16 +31,33 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
         });
     }, []);
     const skills = [
-        'REST API',
-        'RxJS',
+        'MongoDB',
+        'React.js',
+        'Node.js',
+        'Express.js',
+    ];
+
+    const skillsIntern = [
+        '.NET MVC',
+        'C#',
+        'jQuery',
+        'HTML',
+        'CSS',
         'JavaScript',
         'Bootstrap',
-        'MDBootstrap',
-        'EF Core',
-        '.NET Core',
-        'SignalR',
-        'Angular Material',
+        'React.js',
+        'React Material-UI',
     ];
+
+    const skill = [
+        'Angular',
+        'MongoDB',
+        '.NET Web API',
+        'HTML',
+        'SCSS',
+        'Angular Material UI',
+    ];
+
     return (
         <Box
             sx={{
@@ -201,7 +218,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     Worked on Angular, .NET Core Web API, MongoDB, and React.js.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                                    {skills.map((skill, index) => (
+                                    {skill.map((skill, index) => (
                                         <Chip
                                             key={index}
                                             label={skill}
@@ -345,7 +362,7 @@ const WorkExperienceTimeline: React.FC<WorkExperienceProps> = ({ id }) => {
                                     I learned about .NET MVC Core during my internship and also worked on a project called CI-PLATFORM.
                                 </Typography>
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                                    {skills.map((skill, index) => (
+                                    {skillsIntern.map((skill, index) => (
                                         <Chip
                                             key={index}
                                             label={skill}
