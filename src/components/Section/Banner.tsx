@@ -185,7 +185,7 @@ const AppBanner = () => {
               backgroundColor: 'black',
               color: 'white',
               '&:hover': {
-                backgroundColor: '#e3f2fd',
+                backgroundColor: '#36454F',
               }
             }}
           >
@@ -205,7 +205,7 @@ const AppBanner = () => {
               backgroundColor: '#e4405f',
               color: 'white',
               '&:hover': {
-                backgroundColor: '#e3f2fd',
+                backgroundColor: '#F9629F',
               }
             }}
           >
