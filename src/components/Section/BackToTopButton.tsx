@@ -47,7 +47,7 @@ const BackToTopButton: React.FC = () => {
           height: '48px',
           backgroundColor: '#2a578b',
           '&:hover': {
-            backgroundColor: '#F5F5F5',
+            backgroundColor: 'rgb(70 73 76)',
           },
         }}
       >
