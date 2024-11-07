@@ -15,20 +15,20 @@ interface SkillProps {
     id?: string;
 }
 const skills: Skill[] = [
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/WStjjaZN32YEdyCXnkja.png', altText: 'HTML', skillName: 'HTML' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/He6zOD2wXR4xKWIYGVt5.png', altText: 'CSS', skillName: 'CSS' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/S1hnNzRKV759hTDUCyZt.png', altText: 'JavaScript', skillName: 'JavaScript' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/TDgHK934oEx654Af2neo.png', altText: 'Bootstrap', skillName: 'Bootstrap' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/9rT2mCYjVlLuBBoNfBA0.png', altText: 'ReactJS', skillName: 'ReactJS' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/tLDV3ypWj4jmR8XAw46P.png', altText: 'NodeJS', skillName: 'NodeJS' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/fOgpNquNSHDGaGjCRerb.png', altText: 'ExpressJS', skillName: 'ExpressJS' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/7c0dzHB62nwu4sE8oF2J.png', altText: 'MongoDB', skillName: 'MongoDB' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/zf9yKyATw2Gb2YCCj74B.png', altText: '.NET', skillName: '.NET' },
-    { imageSrc: 'https://img.icons8.com/?size=512&id=laYYF3dV0Iew&format=png', altText: 'SQL Server', skillName: 'SQL Server' },
-    // { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/D21ALFqlmSZfjMeskqLp.png', altText: 'PostgreSQL', skillName: 'PostgreSQL' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/r4KbD0cM7U9bedGoeAJd.png', altText: 'Github', skillName: 'Github' },
-    { imageSrc: 'https://portfolio-v5-seven.vercel.app//uploads/aEN5B72kMHDhDSRcCRSS.png', altText: 'Git', skillName: 'Git' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg', altText: 'HTML', skillName: 'HTML' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg', altText: 'CSS', skillName: 'CSS' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png', altText: 'JavaScript', skillName: 'JavaScript' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg', altText: 'Bootstrap', skillName: 'Bootstrap' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg', altText: 'ReactJS', skillName: 'ReactJS' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg', altText: 'NodeJS', skillName: 'NodeJS' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png', altText: 'ExpressJS', skillName: 'ExpressJS' },
+  { imageSrc: 'https://img.icons8.com/color/480/mongodb.png', altText: 'MongoDB', skillName: 'MongoDB' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg', altText: '.NET', skillName: '.NET' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png', altText: 'SQL Server', skillName: 'SQL Server' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg', altText: 'Git', skillName: 'Git' },
+  { imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg', altText: 'Github', skillName: 'Github' }
 ];
+
 
 const SkillsSection: React.FC<SkillProps> = ({ id }) => {
     useEffect(() => {
