@@ -95,11 +95,6 @@ const Footer: React.FC<ContactSectionProps> = ({ id }) => {
                                 shahjainam491@gmail.com
                             </Link>
                         </Typography>
-                        <Typography variant="body2">
-                            <Link href="tel:+91 9510386322" color="inherit" sx={{ textDecoration: 'none' }}>
-                                +91 9510386322
-                            </Link>
-                        </Typography>
                     </Box>
                 </Box>
 
