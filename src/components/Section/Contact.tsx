@@ -33,7 +33,7 @@ const Footer: React.FC<ContactSectionProps> = ({ id }) => {
                     data-aos-duration="1000">
                     <Avatar
 
-                        src={coderboy}
+                        src={avatar}
                         sx={{ width: 200, height: 200, boxShadow: 3, mb: { xs: 3, lg: 0 } }}
                         alt="Profile Image"
                     />
