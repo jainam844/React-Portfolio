@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Avatar, IconButton, Link } from '@mui/material';
 import { LinkedIn } from '@mui/icons-material';
-import coderboy from '../../assets/coderboy.jpg';
+import avatar from '../../assets/avatar.jpg';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
