@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import CloseIcon from '@mui/icons-material/Close';
-import Js from '../../assets/JS1.png';
+import JS from '../../assets/JS.png';
 import { smoothScroll } from '../utils/smoothScroll';
 
 const socialLinks = {
@@ -125,7 +125,7 @@ function ResponsiveAppBar() {
             }}
             onClick={handleLogoClick}
           >
-            <Avatar src={Js} />
+            <Avatar src={JS} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, alignItems: 'center', position: 'relative' }}>
