@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import CloseIcon from '@mui/icons-material/Close';
-import Js from '../../assets/JS.png';
+import Js from '../../assets/JS.jfif';
 import { smoothScroll } from '../utils/smoothScroll';
 
 const socialLinks = {
