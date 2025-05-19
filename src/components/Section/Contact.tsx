@@ -54,7 +54,7 @@ const Footer: React.FC<ContactSectionProps> = ({ id }) => {
                             <IconButton href="https://github.com/jainam844" target="_blank" color="inherit" aria-label="Twitter">
                                 <GitHubIcon sx={iconStyle} />
                             </IconButton>
-                            <IconButton href="https://www.instagram.com/jainam_shah_99" target="_blank" color="inherit" aria-label="YouTube">
+                            <IconButton href="https://www.instagram.com/jainam_shah_99/" target="_blank" color="inherit" aria-label="YouTube">
                                 <InstagramIcon sx={iconStyle} />
                             </IconButton>
                          
