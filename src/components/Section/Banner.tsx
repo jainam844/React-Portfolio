@@ -192,7 +192,7 @@ const AppBanner = () => {
             <GitHubIcon />
           </Button>
           <Button
-            href="https://www.instagram.com/jainam_shah"
+            href="https://www.instagram.com/jainam_shah_99/"
             target="_blank"
             rel="noopener"
             sx={{
